@@ -40,25 +40,31 @@ print("Final Score Round 1", score)
 ##### Part 2 
 
 elf_di = {"A": "Rock", "B":"Paper", "C":"Scissor"}
+
+win_di = {"Rock":2, "Paper":3, "Scissor":1}
+lose_di = {"Rock":3, "Paper":1, "Scissor":2}
+draw_di = {"Rock":1, "Paper":2, "Scissor":3}
+
 res_di = {"X": "Lose", "Y":"Draw", "Z":"Win"}
 
-score = 0
+score_2 = 0
 for i in list_stra:
     elf,me = i.split()
 
     if res_di[me] == "Lose":
-        score += 0 
-        if 
+        print("Lose")
+        score_2 += lose_di[elf_di[elf]]
 
-    if me_di[me] == elf_di[elf]:
-        print("Draw", i)
-        score+=3
-    elif (elf_di[elf], me_di[me]) in [("Rock", "Scissor"),("Paper","Rock"), ("Scissor", "Paper")]:
-        print("Lost", i)
-        score += 0
+
+    elif res_di[me] == "Win":
+        print("Win")
+        score_2 += 6
+        score_2 += win_di[elf_di[elf]]
+
     else:
-        print("Won", i)
-        score += 6
+        print("Draw")
+        score_2 += 3
+        score_2 += draw_di[elf_di[elf]]
 
-print(score)
+print("Final Score Round 2:",score_2)
 
